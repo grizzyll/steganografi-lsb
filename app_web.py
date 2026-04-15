@@ -128,6 +128,13 @@ div[data-testid="stVerticalBlockBorderWrapper"] { padding: 0 !important; }
 .stFileUploader section { background:var(--bg) !important;border:1.5px dashed rgba(124,106,247,0.25) !important;border-radius:16px !important;padding:28px !important;transition:all 0.2s !important; }
 .stFileUploader section:hover { border-color:rgba(124,106,247,0.5) !important;background:rgba(124,106,247,0.03) !important; }
 .stFileUploader section p,.stFileUploader section span { color:var(--muted) !important;font-family:'Instrument Sans',sans-serif !important; }
+/* ── FIX: duplicate/stacked "upload" text in Streamlit file uploader ── */
+/* Hide the drag-and-drop instruction text, keep only the browse button */
+[data-testid="stFileUploaderDropzoneInstructions"] { display:none !important; }
+/* Re-show the browse button which is inside the dropzone */
+[data-testid="stFileUploaderDropzone"] button { display:inline-flex !important; }
+/* Spacing fix so the button is centered */
+[data-testid="stFileUploaderDropzone"] { display:flex !important; flex-direction:column !important; align-items:center !important; justify-content:center !important; gap:10px !important; min-height:80px !important; }
 
 /* INPUTS */
 .stTextArea textarea { background:var(--bg) !important;border:1.5px solid var(--border) !important;border-radius:14px !important;color:var(--text) !important;font-family:'Instrument Sans',sans-serif !important;font-size:0.95rem !important;padding:16px 18px !important;transition:border-color 0.2s !important; }
